@@ -35,7 +35,7 @@ var REQUIRED_FILES = [
 ];
 
 self.addEventListener('install', function (event) {
-
+console.log('[install]');
     // Perform install step: loading each required file into cache
     event.waitUntil(
             caches.open(CACHE_NAME)
