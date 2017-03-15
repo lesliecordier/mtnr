@@ -35,7 +35,7 @@ var REQUIRED_FILES = [
 ];
 
 self.addEventListener('install', function (event) {
-console.log('[install]');
+    console.log('[install]');
     // Perform install step: loading each required file into cache
     event.waitUntil(
             caches.open(CACHE_NAME)
@@ -54,23 +54,17 @@ console.log('[install]');
 });
 self.addEventListener('fetch', function (event) {
     event.respondWith(
-            caches.match(event.request)
-            .then(function (response) {
-                // Cache hit - return the response from the cached version
-                if (response) {
-                    console.log(
-                            '[fetch] Returning from ServiceWorker cache: ',
-                            event.request.url
-                            );
+        caches.match(event.request).catch(function () {
+            return fetch(event.request).then(function (response) {
+                return caches.open('montaner-dependencies-cache').then(function (cache) {
+                    cache.put(event.request, response.clone());
                     return response;
-                }
-                // Not in cache - return the result from the live server fetch is essentially a “fallback”
-                console.log('[fetch] Returning from server: ', event.request.url);
-                return fetch(event.request);
-            }
-            )
-            );
+                });
+            });
+        })
+    );
 });
+
 self.addEventListener('activate', function (event) {
     console.log('[activate] Activating ServiceWorker!');
     // Calling claim() to force a “controllerchange” event on navigator.serviceWorker
