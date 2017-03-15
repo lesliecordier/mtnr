@@ -21,6 +21,7 @@ var REQUIRED_FILES = [
     'docs/clos-real.pdf',
     'images/cepage.jpg',
     'images/verres-vins.jpg',
+    'images/vignoble.jpg',
     'images/up.png',
     'images/home.png',
     'images/fond-accueil.jpg',
