@@ -1,0 +1,666 @@
+/**********************************************
+ *                SOMMAIRE                    *
+ **********************************************
+ *                                            *
+ * 1. Général                                 *
+ * 2. Page d'accueil                          *
+ * 3. Page listes vins/bieres/premiums        *
+ *    a. Entête                               *
+ *    b. Checkboxes                           *
+ *    c. Listes                               *
+ *    d. Popup fiches vin/biere/premium       *
+ *    e. Popup fiches domaine/présentation    *
+ * 4. Backoffice                              *
+ *    a. Sommaire                             *
+ *    b. Formulaires                          *
+ *                                            *
+ **********************************************/
+
+/*------------------------
+        1. Général         
+ *-----------------------*/
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 24px;
+    overflow:hidden;
+}
+
+/*------------------------
+     2. Page d'accueil
+ *-----------------------*/
+
+#home{
+    background-image: url(../images/fond-accueil.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 1200px;
+    text-align: center;
+}
+.ui-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.offres{
+    display: inline-block;
+    background-color: #fbbe1e;
+    border: 0px solid #000;
+    border-radius: 6px;
+    width: 120px;
+    height: 70px;
+    padding: 10px;
+    margin: 500px 0px 20px 5px;
+    vertical-align: middle;
+    opacity: 1;
+    font-size: 0.8em;
+}
+
+#vins.offres, #idmenu.offres {
+    line-height: 70px;
+}
+
+#bieres, #offres {
+    padding-top: 23px;
+    padding-bottom: 21px;
+    height: auto;
+}
+
+#vins, #bieres, #premium, #offres, #idmenu:hover{
+    cursor: pointer;
+}
+
+#idmenu>a {
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
+}
+
+#titreCarte{
+    color: #fff;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 50px;
+    letter-spacing: 4px;
+    background-color: #000;
+    opacity: 0.7;
+    padding: 20px;
+    position: absolute;
+    left: 200px;
+    top: 520px;
+    width: 400px;
+}
+
+
+/*------------------------
+  3. Page liste des vins
+ *-----------------------*/
+
+    /*------------------------
+            3.a Entête
+     *-----------------------*/
+
+.homeButton{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+}
+
+#bandeauTitre{
+    background-color: #cc0000;
+    color: #fff;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 34px;
+    letter-spacing: 4px;
+    width: 100%;
+    margin: -10px 0 0 0;
+    padding: 100px 0 10px 0;
+    text-align: center;
+}
+
+    /*------------------------
+          3.b Checkboxes
+     *-----------------------*/
+
+.ui-grid-b {
+    padding-top: 20px;
+}   
+
+.imgCheckbox{
+    width: 253px;
+    height: 161px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #828282;
+    border: solid 1px #ddd;
+}
+
+#listevins .imgCheckbox {
+    margin: 10px 5px 10px 5px;
+}
+
+#listebieres .imgCheckbox, #listepremium .imgCheckbox {
+    margin: 10px;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.titreCheckbox{
+    text-align: center;
+    font-size: 28px;
+    /*text-shadow: 2px 2px 5px #828282;*/
+    font-weight: bold;
+    margin: 0 0 15px 0;
+}
+
+.paddingCheckbox{
+    padding: 0 10px;
+}
+
+.ui-controlgroup label{
+    font-size: 24px;
+    font-family: 'Gentium Book Basic', serif;
+}
+
+.tailleFieldset>div{
+    overflow: hidden;
+}
+
+.tailleFieldset>div>div{
+    max-height:264px;
+    overflow:  auto;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+a.chk {
+    background-color: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    color: #333;
+    text-decoration: none;
+}
+
+a.chk:visited, a.chk:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.ui-block-a, .ui-block-b, .ui-block-c {
+    text-align: center;
+}
+
+.ui-controlgroup, fieldset.ui-controlgroup {
+    margin: .5em 0;
+}
+
+    /*------------------------
+            3.c Listes
+     *-----------------------*/
+
+.search-bar{
+    width: 500px; 
+    position: absolute; 
+    top: 20px; 
+    left: 50%; 
+    margin-left: -250px;
+}
+
+th {
+    font-family: times;
+}
+
+.ligneQuantite{
+    margin: 5px 5px 0;
+}
+
+#listeVins,#listeBieres,#listePremium {
+    margin-top: -10px;
+}
+
+.liste{
+    margin: 0px 5px 0px 5px;
+    overflow: auto;
+    height: 55vh;
+}
+
+.liste a {
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
+}
+
+.fondGris thead{
+    background-color: #fbbe1e;
+}
+
+th.titreTable {
+    padding-left: 0;
+}
+
+th.tarif{
+    text-align: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    font-weight: bold;
+}
+
+th.code {
+    padding-left: 25px;
+}
+
+td.pdf {
+    text-align: center;
+}
+
+.code, .tarif, .pdf {
+    width: 10%;
+}
+
+.vin {
+    width: 70%;
+}
+
+th.padding-left {
+    padding-left: 0;
+    background-position: center right;
+}
+
+table img {
+    height: 100px;
+    max-width: 90px;
+}
+
+.liste table{
+    margin-bottom: 20px;
+}
+
+.ligneListe {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    text-align: center;
+}
+
+.ligneListe td {
+    padding: 10px 0 0 0;
+}
+
+.ligneListe td.img {
+    width: 100px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ligneListe td.a {
+    vertical-align: middle;
+    width: 485px;
+}
+
+.liste td.tarif{
+    vertical-align: middle;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.liste td.code{
+    vertical-align: middle;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#listebieres td.code, #listepremium td.code {
+    text-align: left;
+    padding-right: 0; 
+}
+
+table.tablesorter thead tr .header {
+    background-image: url(../icones/bg.gif);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+th.code {
+    background-position: center left;
+}
+
+th.pdf, th.tarif {
+    background-position: center right;
+}
+
+table.tablesorter thead tr .headerSortUp {
+    background-image:url(../icones/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+    background-image:url(../icones/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+    background-color: #cc0000;
+}
+
+    /*------------------------------------
+      3.d Popup fiches vin/biere/premium
+     *-----------------------------------*/
+
+.popupFiche {
+    width: 725px;
+    height: 400px;
+    text-align: center;
+    padding: 20px 20px 40px 20px;
+}
+
+.popupFicheBiere {
+    min-height: 620px;
+}
+
+.popupFichePremium, .fichePresentation, .popupFicheBiere  {
+    max-height: 1000px;
+    height: auto;
+}
+
+.popupFicheOffre .titreCheckbox {
+    margin-bottom: 10px;
+}
+
+.popupFicheOffre img {
+    max-width: 675px;
+    max-height: 950px;
+}
+
+.ficheVin {
+    max-height: 950px;
+    overflow: auto;
+}
+
+p.motsCles{
+    font-style: italic;
+    text-align: left;
+}
+
+.photo {
+    text-align: center;
+    width: 340px;
+    float: left;
+    margin-right: 20px;
+    border: 2px #fff solid;
+    box-shadow: 4px 4px 4px #bbb;
+}
+
+.photo>img {
+    max-width: 340px;
+    max-height: 625px;
+}
+
+p.millesime {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+div.table-prix {
+    clear: both;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+div.table-prix>table {
+    width: 100%;
+    font-size: 0.8em;
+}
+
+.lienPdf {
+    margin: 0;
+    position: absolute;
+    bottom: 16px;
+    width: 647px;
+    font-size: 22px;
+    font-family : 'Gentium Book Basic', serif;
+    display: none;
+}
+
+    /*----------------------------------
+       3.e Fiches domaine/presentation
+     *----------------------------------*/
+
+.ficheDomaine{
+    height: 950px;
+    overflow: auto;
+}
+
+.photoDomaine{
+    overflow: hidden;
+    box-shadow: 2px 2px 10px #828282;
+    max-height: 490px;
+    text-align: center;
+}
+
+.photoDomaine>img{
+    max-width: 725px;
+}
+
+.fichePresentation .photoDomaine>img {
+    max-height: 259px;
+}
+
+#presentationDomaine{
+    text-align: justify;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+#liste_offres .ui-li-divider {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/*--------------------
+    4. Backoffice
+*---------------------*/
+
+.backoffice{
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+.centre{
+    text-align: center;
+}
+
+#login{
+    margin: 20px;
+    padding: 8px;
+    position: relative;
+}
+
+#erreur a{
+    width: 140px;
+    color: #000;
+    margin: auto;
+    background-color: #EEEEEE;
+}
+
+    /*--------------------
+        4.a Sommaire
+    *---------------------*/
+#sommaire {
+    padding-top: 50px;
+}
+
+#sommaire .btn-info{
+    margin: 20px auto;
+    width: 300px;
+    height: 60px;
+    padding: 17px;
+}
+
+li a{
+    color: #000;
+}
+
+li a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+#import form, #export form {
+    margin: 40px;
+    text-align: left;
+}
+
+
+    /*--------------------
+         4.b Formulaires 
+    *---------------------*/
+    
+.panel-group{
+    margin-top: 20px;
+}
+
+.form-inline {
+    padding-bottom: 30px;
+}
+
+.form-inline div {
+    padding: 0 0 0 10px;
+}
+
+.form-inline div:first-child {
+    padding: 0 0 0 0;
+}
+
+.form-group-lg{
+    text-align: left;
+    height: auto;
+}
+
+label{
+    font-weight: normal;
+}
+
+.input-group-addon{
+    font-size: 18px;
+}
+
+.input-group-addon img{
+    width: 30px;
+}
+
+label.btn{
+    margin: 0 0 40px 0;
+}
+
+.publie p {
+    margin-bottom: 0;
+}
+
+.publie label {
+    margin-bottom: 30px;
+}
+
+.upload{
+    width: 100%;
+}
+
+#td1, #td2{
+    width: 50%;
+}
+
+.upload td img{
+    min-width: 10%;
+    max-width: 100px
+}
+
+.panel label{
+    padding: 10px 0 0 10px;
+}
+
+.bg-danger{
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+form .btn{
+    margin-top: 10px;
+}
+
+.modal-body label, .modal .panel-heading, .modal input{
+    font-size: 18px;
+}
+
+.floatleft{
+    float: left;
+    width: 714px;
+    margin-right: 10px;
+}
+
+#conditionnements table th, #tabConditionnements table th{
+    font-weight: normal;
+    font-family: inherit;
+}
+
+#conditionnements .form-group, #tabConditionnements .form-group {
+    margin-bottom: 0;
+}
+
+#conditionnements .radius, #tabConditionnements .radius {
+    border-radius: 6px;
+    color: #000;
+}
+
+#ajoutligne, .supp {
+    width: 46px;
+    height: 46px;
+}
+
+.supp {
+    margin: 10px 0 10px 10px;
+}
+
+.erreur {
+    border-color: #a94442;  
+    color: #a94442;
+}
+
+span.erreur {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #a94442;
+}
+
+.table>tbody>tr>td:first-child, .table>thead>tr>th:first-child{
+    padding-left: 0;
+}
+
+
+@media screen and (max-width: 500px) {
+    
+    .upload td input{
+        width: 100%;
+    }
+    
+    #td1{
+        width:90%;
+    }
+    
+    #td2{
+        width:10%;
+    }
+    
+    .upload td img{
+        max-width: 60px;
+    }
+    
+    .upload td{
+        text-align: center;
+    }
+    
+    #region, #cepage, #domaine{
+        width: 80%;
+        margin-right: 10px;
+    }
+    
+}
