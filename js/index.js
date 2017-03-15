@@ -1,11 +1,12 @@
 //Register the ServiceWorker
 
- 
-navigator.serviceWorker.register('service-worker.js', {
-  scope: '.'
-}).then(function(registration) {
-  console.log('The service worker has been registered ', registration);
-});
+if ('serviceWorker' in navigator) { 
+  navigator.serviceWorker.register('service-worker.js', {
+    scope: './'
+  }).then(function(registration) {
+    console.log('The service worker has been registered ', registration);
+  });
+}
 
 //Listen for claiming of our ServiceWorker
 
