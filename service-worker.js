@@ -20,7 +20,6 @@ var REQUIRED_FILES = [
     'docs/M-CHAPOUTIER-LA-BERNARDINE-Rouge.pdf',
     'docs/clos-real.pdf',
     'images/cepage.jpg',
-    'images/vignoble.jpg',
     'images/verres-vins.jpg',
     'images/up.png',
     'images/home.png',
