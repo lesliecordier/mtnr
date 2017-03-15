@@ -33,7 +33,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
       if (this.state === 'activated') {
 
 //Show the “You may now use offline” notification
-
+        alert("Mode hors ligne peut être activé !");
         console.log('offline ok');
       }
     }
