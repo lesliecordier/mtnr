@@ -34,9 +34,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
 //Show the “You may now use offline” notification
 
- 
-        document.getElementById('offlineNotification')
-        .classList.remove('hidden');
+        console.log('offline ok');
       }
     }
   );
