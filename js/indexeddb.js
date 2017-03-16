@@ -136,10 +136,6 @@ $(function () {
                             prix: (value.prixHT6) ? (value.prixHT6).toFixed(3) : ''
                         }
                     };
-                    if(objvins[cursor.key]['pdf'] !== '#'){
-                        console.log('ajout pdf dans le cache: https://lesliecordier.github.io/mtnr/' + objvins[cursor.key]['pdf']);
-                        updateRequiredFiles('https://lesliecordier.github.io/mtnr/' + objvins[cursor.key]['pdf']);
-                    }
                 };
 
                 // Move on to the next object in store

@@ -6,6 +6,7 @@ if ('serviceWorker' in navigator) {
     scope: './'
   }).then(function(registration) {
     console.log('The service worker has been registered ', registration);
+    console.log('[INDEX] '+REQUIRED_FILES);
   });
 }
 

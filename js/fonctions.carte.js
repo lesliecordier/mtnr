@@ -74,7 +74,6 @@ function createCheckboxRegion(vins) {
             inputR = '',
             region,
             nbRegion = 0,
-            idTable,
             doubleVin = [];
     $.each(vins, function (idvin, vin) {
         if (idvin > 0) {
@@ -217,6 +216,11 @@ function addLignesVins(vins) {
             vins[idvin]['regionmin'] = region;
             vins[idvin]['couleurmin'] = couleur;
 
+        }
+
+        if (vin['pdf'] !== '#') {
+            console.log('ajout pdf dans le cache: https://lesliecordier.github.io/mtnr/' + vin['pdf']);
+            updateRequiredFiles('https://lesliecordier.github.io/mtnr/' + vin['pdf']);
         }
 
     });
