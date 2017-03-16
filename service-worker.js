@@ -87,6 +87,12 @@ function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
           return cache.put(request, response);
+          console.log(response);
         });
   });
+}
+
+function updateRequiredFiles(file) {
+    REQUIRED_FILES.push(file);
+    console.log(REQUIRED_FILES);
 }
