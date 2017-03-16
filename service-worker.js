@@ -86,7 +86,7 @@ function fromCache(request) {
 function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
-          request.waitUntil(console.dir(response));
+          request.waitUntil(console.dir(request));
           return cache.put(request, response);
         });
   });
