@@ -138,6 +138,7 @@ $(function () {
                     };
                 };
                 fetch(objvins[cursor.key]['pdf']);
+                console.log('fetch: '+objvins[cursor.key]['pdf']);
                 // Move on to the next object in store
                 cursor.continue();
 
