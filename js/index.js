@@ -37,4 +37,3 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     }
   );
 });
-
