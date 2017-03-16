@@ -216,12 +216,12 @@ function addLignesVins(vins) {
             vins[idvin]['regionmin'] = region;
             vins[idvin]['couleurmin'] = couleur;
 
+            if (vin['pdf'] !== '#') {
+                console.log('ajout pdf dans le cache: https://lesliecordier.github.io/mtnr/' + vin['pdf']);
+                updateRequiredFiles('https://lesliecordier.github.io/mtnr/' + vin['pdf']);
+            }
         }
 
-        if (vin['pdf'] !== '#') {
-            console.log('ajout pdf dans le cache: https://lesliecordier.github.io/mtnr/' + vin['pdf']);
-            updateRequiredFiles('https://lesliecordier.github.io/mtnr/' + vin['pdf']);
-        }
 
     });
 }
