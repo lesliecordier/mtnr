@@ -1,6 +1,29 @@
 var CACHE_NAME = 'montaner-dependencies-cache';
 // Files required to make this app work offline
-var REQUIRED_FILES = [];
+var REQUIRED_FILES = ["https://lesliecordier.github.io/mtnr/", 
+    "https://lesliecordier.github.io/mtnr/css/jquery.mobile-1.4.5.css", 
+    "https://lesliecordier.github.io/mtnr/css/style.css", 
+    "https://lesliecordier.github.io/mtnr/js/jquery.js", 
+    "https://lesliecordier.github.io/mtnr/js/xls.core.min.js", 
+    "https://lesliecordier.github.io/mtnr/js/alasql.min.js", 
+    "https://lesliecordier.github.io/mtnr/js/jquery.preload.min.js", 
+    "https://lesliecordier.github.io/mtnr/js/jquery.mobile-1.4.5.min.js", 
+    "https://lesliecordier.github.io/mtnr/js/jquery.tablesorter.min.js", 
+    "https://lesliecordier.github.io/mtnr/js/index.js", 
+    "https://lesliecordier.github.io/mtnr/js/loader.js", 
+    "https://lesliecordier.github.io/mtnr/js/indexeddb.js", 
+    "https://lesliecordier.github.io/mtnr/js/fonctions.carte.js", 
+    "https://lesliecordier.github.io/mtnr/images/home.png", 
+    "https://lesliecordier.github.io/mtnr/images/vignoble.jpg", 
+    "https://lesliecordier.github.io/mtnr/images/verres-vins.jpg", 
+    "https://lesliecordier.github.io/mtnr/images/sprites.gif", 
+    "https://lesliecordier.github.io/mtnr/images/cepage.jpg", 
+    "https://fonts.gstatic.com/s/gentiumbookbasic/v7/IRFxB2matTxrjZt6a3FUnjHxYFfSxJ-QC83SOBxk38Y.woff2", 
+    "https://lesliecordier.github.io/mtnr/css/images/ajax-loader.gif", 
+    "https://lesliecordier.github.io/mtnr/images/fond-accueil.jpg", 
+    "https://lesliecordier.github.io/mtnr/icones/doc.png", 
+    "https://lesliecordier.github.io/mtnr/icones/desc.gif", 
+    "https://lesliecordier.github.io/mtnr/icones/bg.gif"]
 
 self.addEventListener('install', function (event) {
     console.log('[install]');
