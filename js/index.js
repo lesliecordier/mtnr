@@ -6,7 +6,6 @@ if ('serviceWorker' in navigator) {
     scope: './'
   }).then(function(registration) {
     console.log('The service worker has been registered ', registration);
-    console.log('[INDEX] '+REQUIRED_FILES);
   });
 }
 
@@ -33,10 +32,9 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
  
       if (this.state === 'activated') {
 
-//Show the “You may now use offline” notification
         alert("Le mode hors ligne peut être activé !");
-        console.log('offline ok');
       }
     }
   );
 });
+
