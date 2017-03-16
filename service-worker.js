@@ -87,12 +87,15 @@ function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
           console.dir('url:'+response.url);
+          updateRequiredFiles(response.url);
           return cache.put(request, response);
         });
   });
 }
 
-function updateRequiredFiles(file) {
-    REQUIRED_FILES.push(file);
+function updateRequiredFiles(url) {
+    if(REQUIRED_FILES.indexOf(url) === -1){
+        REQUIRED_FILES.push(url);
+    }
     console.log(REQUIRED_FILES);
 }
