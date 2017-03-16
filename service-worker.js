@@ -86,7 +86,7 @@ function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
           return cache.put(request, response);
-          console.log(response);
+          console.log('REPONSE: '+ response);
         });
   });
 }
