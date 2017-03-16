@@ -33,7 +33,6 @@ var REQUIRED_FILES = [
     'icones/bg.gif',
     'vins.xls'
 ];
-
 self.addEventListener('install', function (event) {
     console.log('[install]');
     // Perform install step: loading each required file into cache
@@ -48,21 +47,24 @@ self.addEventListener('install', function (event) {
             .then(function () {
                 console.log('[install] All required resources have been cached, ' +
                         'we\'re good!');
-                return self.skipWaiting();
+                return self.skipWaiting(); // Attente d'évènement pour mise à jour client actif
             })
             );
 });
 self.addEventListener('fetch', function (event) {
-    event.respondWith(
-        caches.match(event.request).catch(function () {
-            return fetch(event.request).then(function (response) {
-                return caches.open('montaner-dependencies-cache').then(function (cache) {
-                    cache.put(event.request, response.clone());
-                    return response;
-                });
-            });
-        })
-    );
+    event.respondWith(fromCache(event.request)
+
+//        caches.match(event.request).catch(function () {
+//            return fetch(event.request).then(function (response) {
+//                return caches.open(CACHE_NAME).then(function (cache) {
+//                    cache.put(event.request, response.clone());
+//                    return response;
+//                });
+//            });
+//        })
+
+            );
+    event.waitUntil(update(event.request));
 });
 
 self.addEventListener('activate', function (event) {
@@ -71,3 +73,20 @@ self.addEventListener('activate', function (event) {
     console.log('[activate] Claiming this ServiceWorker!');
     event.waitUntil(self.clients.claim());
 });
+
+
+function fromCache(request) {
+    return caches.open(CACHE_NAME).then(function (cache) {
+        return cache.match(request).then(function (matching) {
+            return matching || Promise.reject('no-match');
+        });
+    });
+}
+
+function update(request) {
+    return caches.open(CACHE_NAME).then(function (cache) {
+        return fetch(request).then(function (response) {
+          return cache.put(request, response);
+        });
+  });
+}
