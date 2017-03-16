@@ -1,6 +1,3 @@
-importScripts('js/indexeddb.js');
-openDb();
-console.log('[INDEXEDDB] :'+ db);
 
 var CACHE_NAME = 'montaner-dependencies-cache';
 // Files required to make this app work offline
