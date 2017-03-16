@@ -13,6 +13,7 @@ var REQUIRED_FILES = [
     'js/xls.core.min.js',
     'js/alasql.min.js',
     'js/loader.js',
+    'js/index.js',
     'docs/MONTANER-PUGET.pdf',
     'docs/domaine-de-la-croix.pdf',
     'docs/M-CHAPOUTIER-BELLERUCHE-Rouge.pdf',
@@ -85,8 +86,8 @@ function fromCache(request) {
 function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
-          return cache.put(request, response);
           console.log('REPONSE: '+ response);
+          return cache.put(request, response);
         });
   });
 }
