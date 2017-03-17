@@ -18,7 +18,6 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     'within navigator.serviceWorker: ', event
   );
   
-        navigator.serviceWorker.controller.postMessage('urlsPdf');
 
 //Listen for changes in the state of our ServiceWorker
 
@@ -35,6 +34,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
       if (this.state === 'activated') {
 
         alert("Le mode hors ligne peut être activé !");
+        
+        navigator.serviceWorker.controller.postMessage('urlsPdf');
       }
     }
   );
