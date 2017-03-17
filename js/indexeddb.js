@@ -169,9 +169,9 @@ setTimeout(function () {
     checkAll(objVins);
     // Creation objet vin pdf
     for (var i in  objVins) {
-        var pdf = objVins[i]['pdf'];
+        var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
         if(urlPdf.indexOf(pdf) === -1){
-            urlPdf.push("https://lesliecordier.github.io/mtnr/" + pdf);
+            urlPdf.push(pdf);
         }
     }
     console.log(urlPdf);
