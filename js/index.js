@@ -18,7 +18,6 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     'within navigator.serviceWorker: ', event
   );
 
-        sendMessage('TEST MESSAGE');
 //Listen for changes in the state of our ServiceWorker
 
  
@@ -66,3 +65,5 @@ function sendMessage(message) {
     navigator.serviceWorker.controller.postMessage(message, [messageChannel.port2]);
   });
 }
+
+worker.postMessage(data);

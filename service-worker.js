@@ -54,8 +54,8 @@ self.addEventListener('activate', function (event) {
     event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('message', function(event) {
-  event.ports[0].postMessage({'test': 'This is my response.'});
+self.addEventListener('message', function handler (event) {
+  console.log(event.data);
 });
 
 
