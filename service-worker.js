@@ -57,6 +57,10 @@ self.addEventListener('activate', function (event) {
     event.waitUntil(self.clients.claim());
 });
 
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
+});
+
 
 function fromCache(request) {
     return caches.open(CACHE_NAME).then(function (cache) {

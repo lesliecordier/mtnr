@@ -37,3 +37,5 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     }
   );
 });
+
+navigator.serviceWorker.controller.postMessage(urlsPdf);
