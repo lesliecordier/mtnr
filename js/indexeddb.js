@@ -173,7 +173,7 @@ setTimeout(function () {
         console.log("vin: " + objVins[i]['pdf']);
         if(!double[objVins[i]['pdf']]){
             double[objVins[i]['pdf']] = true;
-            urlPdf.push(double[objVins[i]['pdf']]);
+            urlPdf.push(objVins[i]['pdf']);
         }
     }
     console.log(urlPdf);
