@@ -60,6 +60,7 @@ $(function () {
         }
     }
 
+
     function getVins() {
 
         var store = db.transaction(DB_STORE_NAME).objectStore(DB_STORE_NAME);
@@ -148,20 +149,5 @@ $(function () {
         return objvins;
     }
 
-    openDb();
-    setTimeout(function(){
-        createCheckboxRegion(objVins);
-        createCheckboxDomaine(objVins);
-        createCheckboxCouleur(objVins);
-        addLignesVins(objVins);
-
-        $('#listevins .tablesorter').tablesorter({sortList: [[0, 0]], headers: {2: {sorter: 'digit'}}});
-
-        $("#resultats_recherche").hide();
-        $("#search").val("");
-        search(objVins);
-        showHideLines(objVins);
-        createPopup(objVins);
-        checkAll(objVins);
-    }, 1000);
+    
 });

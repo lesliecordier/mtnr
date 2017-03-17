@@ -198,7 +198,7 @@ function addLignesVins(vins) {
             ligne[vin['idVin']] += '<td class="tarif">' + vin['prixRef1']['prix'] + ' €</td>';
             ligne[vin['idVin']] += '<td class="pdf">';
             if (vin['pdf'].indexOf('#') === -1) {
-                ligne[vin['idVin']] += '<a href="' + vin['pdf'] + '" target="_blank"><img src="icones/doc.png" alt="document" style="width: 35px; height: 35px"></a><div style="display: none">' + vin['pdf'] + '</div>';
+                ligne[vin['idVin']] += '<a href="' + vin['pdf'] + '" target="_blank"><img src="icones/doc.png" alt="document" style="width: 25px; height: 25px"></a>';
             }
             ;
             ligne[vin['idVin']] += '</td></tr>';
