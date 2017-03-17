@@ -148,14 +148,14 @@ function getVins() {
     return objvins;
 }
 
-function getUrlsVins() {
+function getUrlsPdf() {
     for (var i in  objVins) {
         var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
-        if (urlPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
-            urlPdf.push(pdf);
+        if (urlsPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
+            urlsPdf.push(pdf);
         }
     }
-    return urlPdf;
+    return urlsPdf;
 }
 
 // Open database or create it if not exists
