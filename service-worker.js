@@ -55,7 +55,7 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('message', function(event){
-    console.log("SW Received Message: ");
+    console.log("SW Received Message: " + event.data);
 });
 
 
