@@ -66,4 +66,4 @@ function sendMessage(message) {
   });
 }
 
-worker.postMessage(data);
+navigator.serviceWorker.controller.postMessage(data);
