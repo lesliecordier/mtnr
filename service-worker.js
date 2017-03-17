@@ -1,3 +1,5 @@
+importScripts('js/vins.js');
+
 var CACHE_NAME = 'montaner-dependencies-cache';
 // Files required to make this app work offline
 var REQUIRED_FILES = [

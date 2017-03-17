@@ -148,12 +148,22 @@ function getVins() {
     return objvins;
 }
 
+function getUrlsVins() {
+    for (var i in  objVins) {
+        var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
+        if (urlPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
+            urlPdf.push(pdf);
+        }
+    }
+    return urlPdf;
+}
 
 // Open database or create it if not exists
 openDb();
 
 // Creation table index.html
 setTimeout(function () {
+    
     createCheckboxRegion(objVins);
     createCheckboxDomaine(objVins);
     createCheckboxCouleur(objVins);
@@ -167,13 +177,6 @@ setTimeout(function () {
     showHideLines(objVins);
     createPopup(objVins);
     checkAll(objVins);
-    // Creation objet vin pdf
-    for (var i in  objVins) {
-        var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
-        console.log(urlPdf.indexOf(pdf));
-        if(urlPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#'){
-            urlPdf.push(pdf);
-        }
-    }
+
 }, 1000);
 
