@@ -6,6 +6,7 @@ if ('serviceWorker' in navigator) {
     scope: './'
   }).then(function(registration) {
     console.log('The service worker has been registered ', registration);
+    navigator.serviceWorker.controller.postMessage('urlsPdf');
   });
 }
 
@@ -38,4 +39,3 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
   );
 });
 
-navigator.serviceWorker.controller.postMessage('urlsPdf');
