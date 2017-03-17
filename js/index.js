@@ -6,9 +6,22 @@ if ('serviceWorker' in navigator) {
     scope: './'
   }).then(function(registration) {
     console.log('The service worker has been registered ', registration);
-    navigator.serviceWorker.controller.postMessage('urlsPdf');
   });
 }
+
+navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+  // Let's see if you have a subscription already
+  return serviceWorkerRegistration.pushManager.getSubscription();
+})
+.then(function(subscription) {
+  if (!subscription) {
+    // You do not have subscription
+  }
+  // You have subscription.
+  // Send data to service worker
+    navigator.serviceWorker.controller.postMessage('urlsPdf');
+
+})
 
 //Listen for claiming of our ServiceWorker
 
