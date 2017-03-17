@@ -2,7 +2,7 @@
  * Connect and create objects in IndexedDB
  */
 
-$(function () {
+
 
     DB_NAME = 'montaner-indexeddb-vins';
     DB_VERSION = 1; // Use only int, not float 
@@ -150,4 +150,3 @@ $(function () {
     }
 
     
-});
