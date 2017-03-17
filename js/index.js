@@ -9,20 +9,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-  // Let's see if you have a subscription already
-  return serviceWorkerRegistration.pushManager.getSubscription();
-})
-.then(function(subscription) {
-  if (!subscription) {
-    // You do not have subscription
-  }
-  // You have subscription.
-  // Send data to service worker
-    navigator.serviceWorker.controller.postMessage('urlsPdf');
-
-})
-
 //Listen for claiming of our ServiceWorker
 
  
@@ -31,6 +17,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     '[controllerchange] A "controllerchange" event has happened ' +
     'within navigator.serviceWorker: ', event
   );
+  
+        navigator.serviceWorker.controller.postMessage('urlsPdf');
 
 //Listen for changes in the state of our ServiceWorker
 
