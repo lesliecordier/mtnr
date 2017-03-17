@@ -68,7 +68,6 @@ function fromCache(request) {
 function update(request) {
     return caches.open(CACHE_NAME).then(function (cache) {
         return fetch(request).then(function (response) {
-          console.dir('url:'+response.url);
           updateRequiredFiles(response.url);
           return cache.put(request, response);
         });

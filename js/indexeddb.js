@@ -169,6 +169,6 @@ setTimeout(function () {
 }, 1000);
 
 // Creation objet vin pdf
-for (vin in  objVins){
+for(var vin in  objVins){
     console.log("vin: "+vin);
 }
