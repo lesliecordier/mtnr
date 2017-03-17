@@ -32,7 +32,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
 
  
       if (this.state === 'activated') {
-
+          navigator.serviceWorker.controller.postMessage('data');
         alert("Le mode hors ligne peut être activé !");
       }
     }
@@ -66,4 +66,3 @@ function sendMessage(message) {
   });
 }
 
-navigator.serviceWorker.controller.postMessage(data);
