@@ -17,7 +17,6 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     '[controllerchange] A "controllerchange" event has happened ' +
     'within navigator.serviceWorker: ', event
   );
-  
 
 //Listen for changes in the state of our ServiceWorker
 
