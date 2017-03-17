@@ -55,7 +55,7 @@ self.addEventListener('activate', function (event) {
 });
 
 self.addEventListener('message', function(event){
-    console.log("SW Received Message: " + event.data);
+    console.log("SW Received Message: ");
 });
 
 
@@ -80,5 +80,4 @@ function updateRequiredFiles(url) {
     if(REQUIRED_FILES.indexOf(url) === -1){
         REQUIRED_FILES.push(url);
     }
-    console.log(REQUIRED_FILES);
 }
