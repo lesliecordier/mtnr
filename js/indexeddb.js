@@ -166,9 +166,9 @@ setTimeout(function () {
     showHideLines(objVins);
     createPopup(objVins);
     checkAll(objVins);
+    // Creation objet vin pdf
+    for (var vin in  objVins) {
+        console.log("vin: " + vin['pdf']);
+    }
 }, 1000);
 
-// Creation objet vin pdf
-for(var vin in  objVins){
-    console.log("vin: "+vin['pdf']);
-}
