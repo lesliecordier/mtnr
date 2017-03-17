@@ -175,6 +175,5 @@ setTimeout(function () {
             urlPdf.push(pdf);
         }
     }
-    console.log(urlPdf);
 }, 1000);
 

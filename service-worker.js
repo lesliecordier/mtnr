@@ -33,7 +33,7 @@ self.addEventListener('install', function (event) {
                 // Add all offline dependencies to the cache
                 console.log('[install] Caches opened, adding all core components ' +
                         'to cache');
-                return cache.addAll(REQUIRED_FILES);
+                return cache.addAll(urlPdf, REQUIRED_FILES);
             })
             .then(function () {
                 console.log('[install] All required resources have been cached, ' +
