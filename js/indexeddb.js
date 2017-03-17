@@ -6,7 +6,8 @@ DB_NAME = 'montaner-indexeddb-vins';
 DB_VERSION = 1; // Use only int, not float 
 DB_STORE_NAME = 'vins';
 
-var db, objVins, urlPdf;
+var db, objVins;
+var urlPdf = [];
 
 /**
  * Open database or create it if not exists
@@ -172,7 +173,7 @@ setTimeout(function () {
         console.log("vin: " + objVins[i]['pdf']);
         if(!double[objVins[i]['pdf']]){
             double[objVins[i]['pdf']] = true;
-            urlPdf(double[objVins[i]['pdf']]);
+            urlPdf.push(double[objVins[i]['pdf']]);
         }
     }
     console.log(urlPdf);
