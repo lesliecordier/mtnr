@@ -54,8 +54,8 @@ self.addEventListener('activate', function (event) {
     event.waitUntil(self.clients.claim());
 });
 
-self.addEventListener('message', function (event) {
-  console.log(event.data);
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
 });
 
 
