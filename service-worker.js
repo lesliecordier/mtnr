@@ -1,6 +1,7 @@
 var CACHE_NAME = 'montaner-dependencies-cache';
 // Files required to make this app work offline
-var REQUIRED_FILES = ["https://lesliecordier.github.io/mtnr/", 
+var REQUIRED_FILES = [
+    "https://lesliecordier.github.io/mtnr/", 
     "https://lesliecordier.github.io/mtnr/css/jquery.mobile-1.4.5.css", 
     "https://lesliecordier.github.io/mtnr/css/style.css", 
     "https://lesliecordier.github.io/mtnr/js/jquery.js", 
@@ -44,18 +45,7 @@ self.addEventListener('install', function (event) {
             );
 });
 self.addEventListener('fetch', function (event) {
-    event.respondWith(fromCache(event.request)
-
-//        caches.match(event.request).catch(function () {
-//            return fetch(event.request).then(function (response) {
-//                return caches.open(CACHE_NAME).then(function (cache) {
-//                    cache.put(event.request, response.clone());
-//                    return response;
-//                });
-//            });
-//        })
-
-            );
+    event.respondWith(fromCache(event.request));
     event.waitUntil(update(event.request));
 });
 
