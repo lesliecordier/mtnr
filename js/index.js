@@ -18,6 +18,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     'within navigator.serviceWorker: ', event
   );
 
+        sendMessage('TEST MESSAGE');
 //Listen for changes in the state of our ServiceWorker
 
  
@@ -26,13 +27,13 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
       console.log('[controllerchange][statechange] ' +
         'A "statechange" has occured: ', this.state
       );
+      
 
 //If the ServiceWorker becomes “activated”, let the user know they can go offline!
 
  
       if (this.state === 'activated') {
 
-        sendMessage('TEST MESSAGE');
         alert("Le mode hors ligne peut être activé !");
       }
     }
