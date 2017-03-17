@@ -38,4 +38,4 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
   );
 });
 
-navigator.serviceWorker.controller.postMessage(urlsPdf);
+navigator.serviceWorker.controller.postMessage('urlsPdf');
