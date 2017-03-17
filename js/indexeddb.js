@@ -167,8 +167,8 @@ setTimeout(function () {
     createPopup(objVins);
     checkAll(objVins);
     // Creation objet vin pdf
-    for (var vin in  objVins) {
-        console.log("vin: " + vin);
+    for (var i in  objVins) {
+        console.log("vin: " + objVins[i]['pdf']);
     }
 }, 1000);
 
