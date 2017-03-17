@@ -1,4 +1,4 @@
-importScripts('js/vins.js');
+importScripts("js/jquery.js","js/xls.core.min.js","js/alasql.min.js","js/jquery.mobile-1.4.5.min.js","js/jquery.preload.min.js","js/jquery.tablesorter.min.js","js/fonctions.carte.js","js/loader.js","js/indexeddb.js");
 
 var CACHE_NAME = 'montaner-dependencies-cache';
 // Files required to make this app work offline
