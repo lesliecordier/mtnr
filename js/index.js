@@ -17,7 +17,10 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     '[controllerchange] A "controllerchange" event has happened ' +
     'within navigator.serviceWorker: ', event
   );
-
+navigator.serviceWorker.controller.postMessage({
+            "command": "oneWayCommunication",
+            "message": "Hi, SW"
+        });
 
 //Listen for changes in the state of our ServiceWorker
 
