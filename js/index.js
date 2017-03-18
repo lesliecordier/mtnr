@@ -17,10 +17,7 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     '[controllerchange] A "controllerchange" event has happened ' +
     'within navigator.serviceWorker: ', event
   );
-navigator.serviceWorker.controller.postMessage({
-            "command": "oneWayCommunication",
-            "message": "Hi, SW"
-        });
+navigator.serviceWorker.controller.postMessage('urlsPdf');
 
 //Listen for changes in the state of our ServiceWorker
 
@@ -41,18 +38,3 @@ navigator.serviceWorker.controller.postMessage({
     }
   );
 });
-
-function message() {
-    // ONE WAY COMMUNICATION
-    if (navigator.serviceWorker.controller) {
-        console.log("Sendingage to service worker");
-        navigator.serviceWorker.controller.postMessage({
-            "command": "oneWayCommunication",
-            "message": "Hi, SW"
-        });
-    } else {
-        console.log("No ServiceWorker");
-    }
-}
-
-message();
