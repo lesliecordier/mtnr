@@ -7,7 +7,7 @@ DB_VERSION = 1; // Use only int, not float
 DB_STORE_NAME = 'vins';
 
 var db, objVins;
-var urlsPdf = {};
+var urlsPdf = [];
 
 /**
  * Open database or create it if not exists
@@ -151,9 +151,9 @@ function getVins() {
 function getUrlsPdf() {
     for (var i in  objVins) {
         var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
-//        if (urlsPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
-            urlsPdf[i] = pdf;
-//        }
+        if (urlsPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
+            urlsPdf.push(pdf);
+        }
     }
     return urlsPdf;
 }
@@ -178,6 +178,5 @@ setTimeout(function () {
     createPopup(objVins);
     checkAll(objVins);
     urlsPdf = getUrlsPdf();
-    console.log(urlsPdf);
 }, 1000);
 

@@ -17,9 +17,8 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
     '[controllerchange] A "controllerchange" event has happened ' +
     'within navigator.serviceWorker: ', event
   );
-  try {
+  
     navigator.serviceWorker.controller.postMessage(urlsPdf);
-}catch(e){console.log(e);}
 //Listen for changes in the state of our ServiceWorker
 
  
