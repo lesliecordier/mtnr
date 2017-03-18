@@ -34,10 +34,22 @@ navigator.serviceWorker.addEventListener('controllerchange', function(event) {
       if (this.state === 'activated') {
     
         alert("Le mode hors ligne peut être activé !");
-//        
-//        navigator.serviceWorker.controller.postMessage('urlsPdf');
       }
     }
   );
 });
 
+function message() {
+    // ONE WAY COMMUNICATION
+    if (navigator.serviceWorker.controller) {
+        console.log("Sendingage to service worker");
+        navigator.serviceWorker.controller.postMessage({
+            "command": "oneWayCommunication",
+            "message": "Hi, SW"
+        });
+    } else {
+        console.log("No ServiceWorker");
+    }
+}
+
+message();
