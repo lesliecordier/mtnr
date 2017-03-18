@@ -152,7 +152,7 @@ function getUrlsPdf() {
     for (var i in  objVins) {
         var pdf = "https://lesliecordier.github.io/mtnr/" + objVins[i]['pdf'];
 //        if (urlsPdf.indexOf(pdf) === -1 && objVins[i]['pdf'] !== '#') {
-            urlsPdf.push(pdf);
+            urlsPdf[i] = pdf;
 //        }
     }
     return urlsPdf;
