@@ -57,6 +57,12 @@ self.addEventListener('activate', function (event) {
 self.addEventListener('message', function(event) {
     var data = event.data;
     console.log(data);
+    caches.open(CACHE_NAME)
+            .then(function (cache) {
+                // Add all offline dependencies to the cache
+                console.log('[install] Caches data object message');
+                return cache.addAll(data);
+            })
 });
 
 
