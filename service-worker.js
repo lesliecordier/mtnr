@@ -56,7 +56,7 @@ self.addEventListener('activate', function (event) {
 
 self.addEventListener('message', function(event) {
     var data = event.data;
-    console.log(data);
+    console.dir(data);
 });
 
 
