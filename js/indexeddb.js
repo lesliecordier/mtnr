@@ -7,7 +7,7 @@ DB_VERSION = 1; // Use only int, not float
 DB_STORE_NAME = 'vins';
 
 var db, objVins;
-var urlsPdf = []];
+var urlsPdf = [];
 
 /**
  * Open database or create it if not exists
